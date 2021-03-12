@@ -7,17 +7,17 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
         filename: '[name].js'
     },
+    resolve: {
+        extensions: ['.ts', '.tsx', '.js', '.json']
+    },
     module: {
         rules: [
             {
-                test: /\.js$/,
+                test: /\.(ts|js|tsx)$/,
                 exclude: /node_modules/,
                 use: {
                     loader: 'babel-loader',
-                    // options: {
-                    //     presets: ['@babel/preset-react']
-                    // }
-                }
+                },
             },
             {
                 test: /\.scss$/,
