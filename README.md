@@ -43,13 +43,3 @@ To execute the test in wacth mode
 ``` 
     npm run test:tdd
 ```
-
-## Other tools
-
-Flow is a static type checker for your JavaScript code. It is developed at Facebook and is often used with React. It lets you annotate the variables, functions, and React components with a special type syntax, and catch mistakes early.
-
-To use it
-
-``` 
-    npm run flow
-```
