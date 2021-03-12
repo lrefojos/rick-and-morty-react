@@ -4,11 +4,11 @@
   "description": "A app based in Rick and Morty API",
   "main": "index.js",
   "scripts": {
-    "flow": "flow",
     "dev": "webpack --mode development",
     "start": "webpack serve --mode development",
     "build": "webpack --mode production",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "test:tdd": "jest --watch"
   },
   "repository": {
     "type": "git",
@@ -22,22 +22,24 @@
   "homepage": "https://github.com/lrefojos/rick-and-morty-react#readme",
   "dependencies": {
     "@babel/preset-react": "^7.12.13",
+    "babel-jest": "^26.6.3",
     "babel-loader": "^8.2.2",
     "path": "^0.12.7",
     "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react-dom": "^17.0.1",
+    "ts-node": "^9.1.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.13.10",
     "@babel/core": "^7.13.10",
     "@babel/plugin-proposal-class-properties": "^7.13.0",
     "@babel/preset-env": "^7.13.10",
-    "@babel/preset-flow": "^7.12.13",
     "@babel/preset-typescript": "^7.13.0",
+    "@types/jest": "^26.0.20",
     "@types/react": "^17.0.3",
     "css-loader": "^5.1.1",
-    "flow-bin": "^0.146.0",
     "html-webpack-plugin": "^5.3.1",
+    "jest": "^26.6.3",
     "sass": "^1.32.8",
     "sass-loader": "^11.0.1",
     "style-loader": "^2.0.0",
