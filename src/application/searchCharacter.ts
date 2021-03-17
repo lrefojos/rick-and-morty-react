@@ -1,14 +1,12 @@
 import { CharacterRepository } from '../domain/ports/CharacterRepository';
-import { injectable } from 'inversify';
-import TYPES from '../utils/Types';
-import { getCharacterRepository } from '../ServiceLocator';
+import { getCharacterRepository } from '../utils/ServiceLocator';
 
-export interface ISearchCharacter {
+export interface SearchCharacter {
     getCharacters(): any
 }
 
 //@injectable()
-export class SearchCharacter implements ISearchCharacter {
+export class SearchCharacter implements SearchCharacter {
 
     private repository: CharacterRepository;
 
