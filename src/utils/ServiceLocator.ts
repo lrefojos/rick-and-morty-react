@@ -1,16 +1,16 @@
 import { SearchCharacter } from '../application/searchCharacter';
 import { CharacterRepository } from '../domain/ports/CharacterRepository';
-import { CharacterRepositoryGraphQL } from '../infraestructure/persistence/CharacterRepositoryGraphQL';
+import { CharacterRepositoryREST } from '../infraestructure/persistence/CharacterRepositoryREST';
 
 let characterRepository: CharacterRepository; 
 
 
 export function init() {
-    characterRepository = new CharacterRepositoryGraphQL();
+    characterRepository = new CharacterRepositoryREST();
 }
 
 export function getCharacterRepository(): CharacterRepository {
-    return new CharacterRepositoryGraphQL();
+    return new CharacterRepositoryREST();
 }
 
 export function searchCharacterUseCase(): SearchCharacter {

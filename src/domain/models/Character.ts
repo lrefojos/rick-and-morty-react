@@ -2,13 +2,13 @@ export default class Character {
     private name: string;
     private status: string;
     private location: string;
-    private episode: string;
+    private gender: string;
     
     constructor(data: any) {
         this.name = data.name;
         this.status = data.status;
         this.location = data.location;
-        this.episode = data.episode
+        this.gender = data.gender
     }
     
     getName(): string {
@@ -23,7 +23,7 @@ export default class Character {
         return this.location;
     }
 
-    getEpisode(): string {
-        return this.episode;
+    getGender(): string {
+        return this.gender;
     }
 }
