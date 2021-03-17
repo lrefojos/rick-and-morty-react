@@ -1,4 +1,4 @@
-export class Character {
+export default class Character {
     private name: string;
     private status: string;
     private location: string;
