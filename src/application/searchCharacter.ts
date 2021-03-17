@@ -1,11 +1,11 @@
 import { CharacterRepository } from '../domain/ports/CharacterRepository';
 import { getCharacterRepository } from '../utils/ServiceLocator';
+import Character from '../domain/models/Character';
 
 export interface SearchCharacter {
     getCharacters(): any
 }
 
-//@injectable()
 export class SearchCharacter implements SearchCharacter {
 
     private repository: CharacterRepository;
@@ -14,9 +14,8 @@ export class SearchCharacter implements SearchCharacter {
         this.repository = getCharacterRepository();
     }
 
-    getCharacters() {
-        console.log("character called ")
-        this.repository.getCharacters();
+    async getCharacters(): Promise<Character[]> {
+        return await this.repository.getCharacters();
     }
 }
 

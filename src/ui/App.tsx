@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import { SearchCharacter } from '../application/searchCharacter';
-import {searchCharacterUseCase} from '../utils/ServiceLocator';
+import { searchCharacterUseCase } from '../utils/ServiceLocator';
+import Character from '../domain/models/Character';
 
 export default class App extends Component {
 
-    componentDidMount() {
-        console.log("entro aquí ")
+    async componentDidMount() {
         let searchCharacter = searchCharacterUseCase();
-        searchCharacter.getCharacters();
+        const character: Character[] = await searchCharacter.getCharacters();
+        console.log(character[0].getName())
     }
 
     render() {
