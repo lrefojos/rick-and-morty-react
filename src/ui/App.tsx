@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { searchCharacterUseCase } from '../utils/ServiceLocator';
 import Character from '../domain/models/Character';
+import './app.scss';
 
 interface Props { }
 interface State {
@@ -19,7 +20,7 @@ export default class App extends Component<Props, State> {
         let searchCharacter = searchCharacterUseCase();
         try {
             const characters = await searchCharacter.getCharacters();
-            this.setState({characters})
+            this.setState({ characters })
         } catch {
 
         }
@@ -29,12 +30,14 @@ export default class App extends Component<Props, State> {
     render() {
         const { characters } = this.state;
         return (
-            <div>
-                {
-                    characters && characters.map((character, i) => {
-                        return (<span key={i}> {character.getName()} </span>)
-                    })
-                }
+            <div className="container">
+                <div className="grid-container">
+                    {
+                        characters && characters.map((character, i) => {
+                            return (<ul key={i}> {character.getName()} </ul>)
+                        })
+                    }
+                </div>
             </div>
         )
     }
