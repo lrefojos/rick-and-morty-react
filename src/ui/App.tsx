@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { searchCharacterUseCase } from '../utils/ServiceLocator';
 import Character from '../domain/models/Character';
-import './app.scss';
+//import './app.scss';
 
 interface Props { }
 interface State {
